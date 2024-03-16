@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StandartTimeCalculation extends Model
+class WorkerNeed extends Model
 {
     use HasFactory;
 
@@ -13,8 +13,8 @@ class StandartTimeCalculation extends Model
         'id'
     ];
 
-    public function detailElement()
+    public function workElement()
     {
-        return $this->belongsTo(DetailElement::class, 'detail_element_id', 'id');
+        return $this->belongsTo(WorkElement::class, 'work_element_id', 'id');
     }
 }

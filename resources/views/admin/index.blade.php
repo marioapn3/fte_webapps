@@ -8,11 +8,5 @@
                 the content and settings of your app from here.</p>
         </div>
 
-
-
-
-
-
-
     </div>
 @endsection

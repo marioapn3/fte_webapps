@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\WorkElement;
+use App\Models\WorkerNeed;
 use Illuminate\Http\Request;
 
 class WorkElementController extends Controller
 {
     public function index()
     {
-        return view('admin.WorkElement.index');
+        $workElements = WorkElement::all();
+        return view('admin.WorkElement.index', compact('workElements'));
     }
 
     public function create()
@@ -21,20 +23,36 @@ class WorkElementController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'description' => 'required',
         ]);
 
-        $workElement = new WorkElement([
-            'name' => $request->get('name'),
-            'description' => $request->get('description'),
+        // for ($i = 0; $i < 3; $i++) {
+        //     WorkElement::create([
+        //         'name' => $request->name,
+        //         'order' => $i + 1,
+        //     ]);
+        // }
+
+        $workElement =      WorkElement::create([
+            'name' => $request->name,
         ]);
-        $workElement->save();
-        return redirect('/workElement')->with('success', 'Work Element has been added');
+
+        WorkerNeed::create([
+            'work_element_id' => $workElement->id,
+        ]);
+
+        return redirect()->route('admin.workElement.index')->with('success', 'Work Element has been added');
     }
 
     public function show($id)
     {
         $workElement = WorkElement::find($id);
-        return view('admin.WorkElement.show', compact('workElement'));
+        return view('admin.WorkElement.detail', compact('workElement'));
+    }
+
+    public function delete($id)
+    {
+        $workElement = WorkElement::find($id);
+        $workElement->delete();
+        return redirect()->route('admin.workElement.index')->with('success', 'Work Element has been deleted');
     }
 }

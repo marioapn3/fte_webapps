@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_work_elements', function (Blueprint $table) {
+        Schema::create('detail_elements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('work_element_id')->constrained('work_elements');
+            $table->foreignId('sub_work_element_id')->constrained('sub_work_elements');
             $table->string('name');
-            $table->integer('order');
+            $table->decimal('average', total: 8, places: 4)->nullable();
             $table->decimal('workload')->nullable();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_work_elements');
+        Schema::dropIfExists('detail_elements');
     }
 };

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('work_elements', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('order');
+            $table->decimal('workload')->nullable();
             $table->timestamps();
         });
     }

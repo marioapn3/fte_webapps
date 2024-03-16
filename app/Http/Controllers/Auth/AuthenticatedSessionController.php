@@ -31,9 +31,9 @@ class AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
 
-        if ($user->role === 'admin') {
+        if ($user->role == 'admin') {
             return redirect()->intended(RouteServiceProvider::ADMIN_DASHBOARD);
-        } elseif ($user->role === 'head_division') {
+        } elseif ($user->role == 'head_division') {
             return redirect()->intended(RouteServiceProvider::HEAD_DIV_DASHBOARD);
         }
     }

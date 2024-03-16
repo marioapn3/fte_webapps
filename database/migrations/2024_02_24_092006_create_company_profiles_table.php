@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_work_elements', function (Blueprint $table) {
+        Schema::create('company_profiles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('work_element_id')->constrained('work_elements');
             $table->string('name');
-            $table->integer('order');
-            $table->decimal('workload')->nullable();
+            $table->string('address');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('logo')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_work_elements');
+        Schema::dropIfExists('company_profiles');
     }
 };

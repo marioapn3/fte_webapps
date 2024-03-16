@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('standart_time_calculations', function (Blueprint $table) {
+        Schema::create('work_loads', function (Blueprint $table) {
             $table->id();
             $table->foreignId('detail_element_id')->constrained('detail_elements');
-            $table->decimal('work_time', total: 8, places: 4)->nullable();
-            $table->decimal('rating_factor')->nullable();
-            $table->decimal('normal_time', total: 8, places: 4)->nullable();
-            $table->decimal('allowance')->nullable();
-            $table->decimal('standard_time')->nullable();
-            $table->integer('order');
+            $table->integer('work_time_per_year')->nullable();
+            $table->integer('frequency_per_shift')->nullable();
+            $table->decimal('total_hour')->nullable();
+            $table->decimal('effective_time_per_shift')->nullable();
+            $table->decimal('effective_time_per_year')->nullable();
+            $table->decimal('work_load')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('standart_time_calculations');
+        Schema::dropIfExists('work_loads');
     }
 };
