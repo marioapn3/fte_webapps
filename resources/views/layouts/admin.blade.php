@@ -82,14 +82,80 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="text-white nav-link {{ Request::is('admin-dashboard/work-station*') ? 'active bg-gradient-primary' : '' }}"
+                        href="{{ route('admin.work-station.index') }}">
+                        <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Stasiun Kerja</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="text-white nav-link {{ Request::is('admin-dashboard/work-element*') ? 'active bg-gradient-primary' : '' }}"
                         href="{{ route('admin.workElement.index') }}">
                         <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">table_view</i>
                         </div>
-                        <span class="nav-link-text ms-1">Work Element</span>
+                        <span class="nav-link-text ms-1">Elemen Kerja</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link {{ Request::is('admin-dashboard/rating-factor*') ? 'active bg-gradient-primary' : '' }} "
+                        href="{{ route('admin.ratingFactor.index') }}">
+                        <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Perhitungan Rating Factor</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="text-white nav-link {{ Request::is('admin-dashboard/allowance*') ? 'active bg-gradient-primary' : '' }} "
+                        href="{{ route('admin.allowance.index') }}">
+                        <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Perhitungan Allowance</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="text-white nav-link {{ Request::is('admin-dashboard/wla*') ? 'active bg-gradient-primary' : '' }} "
+                        href="{{ route('admin.wla.index') }}">
+                        <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Perhitungan Siklus</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link {{ Request::is('admin-dashboard/absence*') ? 'active bg-gradient-primary' : '' }} "
+                        href="{{ route('admin.absence.index') }}">
+                        <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Absensi Tenaga Kerja</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link {{ Request::is('admin-dashboard/wfa*') ? 'active bg-gradient-primary' : '' }} "
+                        href="{{ route('admin.wfa.index') }}">
+                        <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">WFA</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-white nav-link {{ Request::is('admin-dashboard/conclusion*') ? 'active bg-gradient-primary' : '' }} "
+                        href="{{ route('admin.conclusion.index') }}">
+                        <div class="text-center text-white me-2 d-flex align-items-center justify-content-center">
+                            <i class="material-icons opacity-10">table_view</i>
+                        </div>
+                        <span class="nav-link-text ms-1">Kesimpulan</span>
+                    </a>
+                </li>
+                {{--
                 <li class="nav-item">
                     <a class="text-white nav-link {{ Request::is('admin-dashboard/standart-time-calculation*') ? 'active bg-gradient-primary' : '' }} "
                         href="{{ route('admin.standartTimeCalculation.index') }}">
@@ -125,7 +191,7 @@
                         </div>
                         <span class="nav-link-text ms-1">Perhitungan Pekerja</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="mt-3 nav-item">
                     <h6 class="text-xs text-white ps-4 ms-2 text-uppercase font-weight-bolder opacity-8">Account pages
                     </h6>

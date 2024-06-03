@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WorkElement extends Model
+class WLADetailCycle extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
 
-    // has many iteration
-    public function iterations()
+    // beelongsto work station detail
+    public function workStationDetail()
     {
-        return $this->hasMany(Iteration::class);
+        return $this->belongsTo(WorkStationDetail::class);
     }
 }
